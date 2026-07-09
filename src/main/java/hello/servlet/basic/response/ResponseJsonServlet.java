@@ -9,9 +9,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.lang.runtime.ObjectMethods;
 
-@WebServlet(name = "responseJsonServlet", description = "/response-json")
+@WebServlet(name = "responseJsonServlet", urlPatterns = "/response-json")
 public class ResponseJsonServlet extends HttpServlet {
 
     private final ObjectMapper objectMapper = new ObjectMapper();

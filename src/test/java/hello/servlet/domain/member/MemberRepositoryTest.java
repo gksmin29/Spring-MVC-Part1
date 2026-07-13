@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-// Assertions 클래스에 있는 static 메서드들을 Assertions. 없이 바로 쓰기 위한 import
-// mac에서는 option + enter로 활성화 여부를 선택할 수 있다.
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MemberRepositoryTest {
 

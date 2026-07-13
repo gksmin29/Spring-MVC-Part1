@@ -17,6 +17,7 @@ public class ControllerV3HandlerAdapter implements MyHandlerAdapter {
         return (handler instanceof ControllerV3);
     }
 
+    // 사실상 이전 controller 내의 process 메서드 역할을 한다.
     @Override
     public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws ServletException, IOException {

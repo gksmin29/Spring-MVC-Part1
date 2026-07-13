@@ -63,16 +63,25 @@ public class FrontControllerServletV5 extends HttpServlet {
 
     }
 
+    /**
+     * 1. handler 조회 후 가져오기 (이 때 url에 맞는 controller가 호출된다.)
+     * 2. 해당 handler(controller)를 처리할 수 있는 adapter를 조회 후 가져오기
+     * 3. 가져온 어댑터에 handler를 넣어 작업 처리
+     */
+
+    // 핸들러 초기화
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdapter());
         handlerAdapters.add(new ControllerV4HandlerAdapter());
     }
 
+    // 핸들러 매핑 정보 가져오기
     private Object getHandler(HttpServletRequest request) {
         String requestURI = request.getRequestURI();
         return handlerMappingMap.get(requestURI);
     }
 
+    // 핸들러 매핑 정보를 이용해 적절한 핸들러 조회
     private MyHandlerAdapter getHandlerAdapter(Object handler) {
         for (MyHandlerAdapter adapter : handlerAdapters) {
             if (adapter.supports(handler)) {

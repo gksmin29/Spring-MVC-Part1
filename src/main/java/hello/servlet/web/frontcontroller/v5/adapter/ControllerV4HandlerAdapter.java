@@ -16,6 +16,7 @@ public class ControllerV4HandlerAdapter implements MyHandlerAdapter {
         return (handler instanceof ControllerV4);
     }
 
+    // 사실상 이전 controller 내의 process 메서드 역할을 한다.
     @Override
     public ModelView handle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         ControllerV4 controller = (ControllerV4) handler;
